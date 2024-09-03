@@ -1,0 +1,29 @@
+# Server configuration
+server:
+  port: 8080
+  shutdown: graceful
+
+# Spring Data Source configuration
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: shorten-url
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shorten
+    username: root
+    password: stuti
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true  # Shows SQL queries in the console for debugging
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+
+# Redis configuration
+redisson:
+  redisUrl: redis://127.0.0.1:6379
+
